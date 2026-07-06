@@ -2,49 +2,17 @@
 <html lang="ja">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>理容師国家試験対策　過去問風オリジナル問題集</title>
-<link rel="stylesheet" href="styles.css">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>理容師国家試験 過去問題集</title>
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
-<header class="hero">
-  <div class="wrap">
-    <h1>理容師国家試験対策<br>過去問風オリジナル問題集</h1>
-    <p>５分野別・正答率記録・ブックマーク・誤答ランダム復習つき</p>
-  </div>
-</header>
-<main class="wrap">
-  <section class="fieldList" aria-label="分野一覧" id="fieldButtons"></section>
-
-  <section class="panel current">
-    <h2 id="currentTitle">全分野</h2>
-    <p id="currentSummary"></p>
-  </section>
-
-  <section id="questions" class="questions"></section>
-
-  <section class="panel stats" aria-label="学習状況">
-    <div><span id="answered">０</span><small>解答済み</small></div>
-    <div><span id="correctRate">０％</span><small>正答率</small></div>
-    <div><span id="bookmarked">０</span><small>ブックマーク</small></div>
-    <div><span id="wrongCount">０</span><small>誤答</small></div>
-  </section>
-
-  <section class="panel controls">
-    <input id="search" type="search" placeholder="問題文・テーマを検索">
-    <div class="actions">
-      <button id="showAll" class="soft">全分野</button>
-      <button id="showBookmarks" class="soft">ブックマーク</button>
-      <button id="wrongRandom" class="accent">誤答をランダム復習</button>
-      <button id="resetProgress" class="danger">記録を消去</button>
-    </div>
-  </section>
-
-</main>
-<footer class="wrap foot">
-  <p>本教材は学習用のオリジナル問題です。実際の過去問本文の転載ではありません。</p>
-</footer>
-<script src="questions.js"></script>
+<div id="app"></div>
+<script src="data.js"></script>
 <script src="app.js"></script>
+<script>
+if ('serviceWorker' in navigator) { window.addEventListener('load',()=>navigator.serviceWorker.register('./sw.js').catch(()=>{})); }
+</script>
 </body>
 </html>
