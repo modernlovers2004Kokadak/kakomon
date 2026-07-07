@@ -2,103 +2,17 @@
 <html lang="ja">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>国家試験</title>
-<meta name="theme-color" content="#07356f">
-<meta name="apple-mobile-web-app-title" content="国家試験">
-<meta name="application-name" content="国家試験">
-<link rel="manifest" href="manifest.json">
-<link rel="stylesheet" href="style.css?v=4">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>理容師国家試験 過去問題集</title>
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
-<header class="app-header">
-  <div class="header-inner">
-    <h1>理容師国家試験対策</h1>
-    <button id="searchBtn" class="icon-btn" aria-label="検索">🔍</button>
-  </div>
-  <div class="search-bar" id="searchBar">
-    <input id="searchInput" type="search" placeholder="９法令から検索">
-  </div>
-</header>
-
-<main class="app">
-  <section id="home" class="screen active">
-
-    <section class="home-section">
-      <h2>法令一覧</h2>
-      <div id="lawList" class="law-list"></div>
-    </section>
-
-    <section class="home-section card progress">
-      <h2>学習の進捗</h2>
-      <div class="progress-content">
-        <div id="donut" class="donut"><span id="percent">0%</span><small>全体の進捗</small></div>
-        <dl>
-          <dt>学習済み条文</dt><dd id="doneCount">0 / 0</dd>
-          <dt>重要条文</dt><dd id="importantDone">0 / 0</dd>
-          <dt>苦手条文</dt><dd id="weakCount">0</dd>
-          <dt>学習済み法令</dt><dd id="doneLaws">0 / 9</dd>
-        </dl>
-      </div>
-    </section>
-  </section>
-
-  <section id="lawScreen" class="screen">
-    <div class="screen-title">
-      <button class="back" id="backHome">‹</button>
-      <h2 id="lawTitle"></h2>
-    </div>
-    <p class="legend">★★★★★＝最重要　★★★★＝頻出　★★★＝重要　★★＝基本　★＝確認</p>
-    <div id="articleList" class="article-list"></div>
-  </section>
-
-  <section id="searchScreen" class="screen">
-    <div class="screen-title">
-      <button class="back" id="backSearchHome">‹</button>
-      <h2>検索結果</h2>
-    </div>
-    <div id="searchResults"></div>
-  </section>
-</main>
-
-<section id="detail" class="detail hidden">
-  <div class="detail-header">
-    <button id="closeDetail">‹</button>
-    <h2 id="detailTitle"></h2>
-  </div>
-  <article class="article-card">
-    <div class="law-name" id="detailLaw"></div>
-    <div class="article-top">
-      <span id="detailStars" class="stars"></span>
-      <div>
-        <button id="weakBtn" class="weak-btn">苦手</button>
-        <button id="markDone" class="mark-btn">未学習</button>
-      </div>
-    </div>
-    <section class="study-box text-section">
-      <span class="label blue">条文</span>
-      <div id="detailBody"></div>
-    </section>
-    <section class="study-box point-section">
-      <span class="label green">試験ポイント</span>
-      <ul id="detailPoints"></ul>
-    </section>
-    <section class="study-box point-section">
-      <span class="label orange">ひっかけポイント</span>
-      <ul id="detailTraps"></ul>
-    </section>
-    <section class="study-box point-section">
-      <span class="label gray">関連法令</span>
-      <div id="relatedLinks" class="related"></div>
-    </section>
-    <div class="article-nav">
-      <button id="prevBtn">‹ 前</button>
-      <button id="nextBtn">次 ›</button>
-    </div>
-  </article>
-</section>
-
-<script src="data.js?v=4"></script>
-<script src="script.js?v=4"></script>
+<div id="app"></div>
+<script src="data.js"></script>
+<script src="app.js"></script>
+<script>
+if ('serviceWorker' in navigator) { window.addEventListener('load',()=>navigator.serviceWorker.register('./sw.js').catch(()=>{})); }
+</script>
 </body>
 </html>

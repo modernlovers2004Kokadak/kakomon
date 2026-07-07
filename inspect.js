@@ -9879,3 +9879,5 @@ const QUESTIONS = [
     "point": "時間短縮より安全確認"
   }
 ];
+
+console.log(JSON.stringify({cats:CATEGORIES, subjects:SUBJECTS, n:QUESTIONS.length, sample:QUESTIONS.slice(0,2)}, null, 2));
