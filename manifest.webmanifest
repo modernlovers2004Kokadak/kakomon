@@ -1,1 +1,26 @@
-{"name":"理容師国家試験 過去問題集","short_name":"過去問","start_url":"./index.html","display":"standalone","background_color":"#f6f7fb","theme_color":"#6b4cc1","icons":[]}
+{
+  "name": "理容師国家試験 過去問",
+  "short_name": "国家試験過去問",
+  "description": "第29回から第53回までの理容師国家試験実過去問",
+  "lang": "ja",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#31aee9",
+  "theme_color": "#073d86",
+  "icons": [
+    {
+      "src": "icons/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "icons/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}
