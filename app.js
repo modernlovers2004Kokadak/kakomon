@@ -147,7 +147,7 @@ function render(){
   if(buttons[1])buttons[1].textContent=pastModeLabel(exam,'study');
  });
 }
-// アプリ起動時は必ず第1階層を表示する。未完了データは保持し、各回の「続きから再開」から復元する。
+// アプリ起動時は必ず第1階層を表示する。未完了データは保持し、各回の『続きから再開』から復元する。
 state.screen='home';
 render();
 pastNavigationReady=true;
