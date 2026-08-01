@@ -1,14 +1,12 @@
-const CACHE_NAME = 'riyoshi-past-exam-pwa';
+const CACHE_NAME = 'riyoshi-past-exam-pwa-v1.0.6';
 const PRECACHE_URLS = [
   "./",
   "./index.html",
   "./app.js",
   "./apple-touch-icon.png",
-  "./data53.js",
-  "./dataPast.js",
-  "./dataPast24.js",
-  "./dataPast30.js",
-  "./dataPast40.js",
+  "./examData.js",
+  "./examAudit.js",
+  "./examValidator.js",
   "./icons/icon-192.png",
   "./icons/icon-512.png",
   "./images/29/q45.webp",
@@ -33,7 +31,6 @@ const PRECACHE_URLS = [
   "./images/53-q46.png",
   "./manifest.webmanifest",
   "./style.css",
-  "./textOverlay.js"
 ];
 
 self.addEventListener('install', event => {
@@ -46,7 +43,11 @@ self.addEventListener('install', event => {
 });
 
 self.addEventListener('activate', event => {
-  event.waitUntil(self.clients.claim());
+  event.waitUntil(
+    caches.keys()
+      .then(keys => Promise.all(keys.filter(key => key !== CACHE_NAME).map(key => caches.delete(key))))
+      .then(() => self.clients.claim())
+  );
 });
 
 self.addEventListener('fetch', event => {

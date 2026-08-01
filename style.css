@@ -51,3 +51,19 @@
 .overview-start.exam{background:linear-gradient(135deg,#56a6ff,#1768d4)}
 .overview-start.study{background:linear-gradient(135deg,#55d4a0,#12966b)}
 @media(max-width:560px){.overview-card h2{font-size:22px}}
+
+/* 問題別学習状況・復習機能 */
+.learning-summary{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:7px;font-size:12px;color:#536580}
+.learning-summary span{padding:8px 5px;border:1px solid #dfe8f2;border-radius:10px;background:#f7faff;text-align:center}
+.learning-summary.large{font-size:13px}
+.learning-panel{display:grid;gap:12px;padding-top:6px;border-top:1px solid #e3eaf3}
+.learning-panel h3{margin:0;font-size:17px}
+.practice-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+.practice-grid button,.backup-actions button,.backup-actions label{min-height:44px;border:1px solid #cbd8e8;border-radius:12px;background:#fff;color:#27415f;padding:10px;font:inherit;text-align:center}
+.practice-grid button:disabled{opacity:.4}
+.backup-actions{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.backup-actions label{display:grid;place-items:center;cursor:pointer}
+.backup-actions input{display:none}
+@media(max-width:560px){.learning-summary{grid-template-columns:repeat(2,minmax(0,1fr))}.practice-grid{grid-template-columns:1fr}.backup-actions{grid-template-columns:1fr}}
+
+.explanation-status{margin-top:14px;padding-top:14px;border-top:1px solid #e7edf5}.explanation-status h3{margin:0 0 10px;font-size:17px}.explanation-pending{padding:10px 12px;border-radius:10px;background:#fff7e8;border:1px solid #f2d39a;color:#72521f}

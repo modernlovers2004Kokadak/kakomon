@@ -17,13 +17,10 @@
 <body>
 <div id="app"></div>
 <div class="floating-nav" aria-label="画面移動"><button id="pastBack" class="floating-back" type="button" onclick="pastBack()" aria-label="1つ上の画面へ戻る">‹</button><button id="pastHome" class="floating-home" type="button" onclick="pastHome()" aria-label="過去問一覧へ戻る">⌂</button></div>
-<script src="data53.js"></script>
-<script src="dataPast.js"></script>
-<script src="dataPast40.js"></script>
-<script src="dataPast30.js"></script>
-<script src="dataPast24.js"></script>
-<script src="textOverlay.js"></script>
-<script>applyPastTextOverlay(EXAMS)</script>
+<script src="examData.js"></script>
+<script src="examAudit.js"></script>
+<script>preparePastExamData(EXAMS)</script>
+<script src="examValidator.js"></script>
 <script src="app.js"></script>
 
 <script>
@@ -33,5 +30,6 @@ if ('serviceWorker' in navigator) {
   });
 }
 </script>
+<div style="text-align:center;color:#888;font-size:12px;padding:16px 0 20px;">Version 1.0.6</div>
 </body>
 </html>
