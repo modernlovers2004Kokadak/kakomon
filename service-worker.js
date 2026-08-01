@@ -1,4 +1,4 @@
-const CACHE_NAME = 'riyoshi-past-exam-pwa-v1.0.6';
+const CACHE_NAME = 'riyoshi-past-exam-pwa-1.0.97';
 const PRECACHE_URLS = [
   "./",
   "./index.html",
@@ -9,22 +9,48 @@ const PRECACHE_URLS = [
   "./examValidator.js",
   "./icons/icon-192.png",
   "./icons/icon-512.png",
+  "./images/29/q41.webp",
   "./images/29/q45.webp",
+  "./images/30/q41.webp",
+  "./images/30/q45.webp",
+  "./images/31/q45.webp",
+  "./images/31s/q21.webp",
+  "./images/31s/q44.webp",
   "./images/32/q31.webp",
+  "./images/33/q41.webp",
+  "./images/33/q42.webp",
   "./images/34/q31.webp",
   "./images/34/q41.webp",
   "./images/34/q45.webp",
   "./images/34/q48.webp",
   "./images/35/q45.webp",
+  "./images/36/q41.webp",
   "./images/37/q31.webp",
+  "./images/38/q21.webp",
   "./images/38/q41.webp",
+  "./images/38/q48.webp",
   "./images/39/q43.webp",
+  "./images/39/q45.webp",
+  "./images/40/q41.webp",
+  "./images/41n/q46.webp",
   "./images/41o/q43.webp",
+  "./images/42n/q44.webp",
+  "./images/42n/q51.webp",
+  "./images/42o/q41.webp",
+  "./images/42o/q48.webp",
   "./images/43n/q44.webp",
+  "./images/43o/q41.webp",
   "./images/43o/q44.webp",
+  "./images/44/q50.webp",
+  "./images/44/q55.webp",
+  "./images/45/q43.webp",
+  "./images/45/q53.webp",
   "./images/47/q44.webp",
+  "./images/48/q43.webp",
   "./images/50/q53.webp",
   "./images/51/q42.webp",
+  "./images/51/q44.webp",
+  "./images/51/q51.webp",
   "./images/52/q44.webp",
   "./images/52/q46.webp",
   "./images/53-q42.png",
@@ -57,6 +83,10 @@ self.addEventListener('fetch', event => {
   const isAppShell = event.request.mode === 'navigate' ||
     url.pathname.endsWith('/index.html') ||
     url.pathname.endsWith('/app.js') ||
+    url.pathname.endsWith('/examData.js') ||
+    url.pathname.endsWith('/examAudit.js') ||
+    url.pathname.endsWith('/examValidator.js') ||
+    url.pathname.endsWith('/style.css') ||
     url.pathname.endsWith('/service-worker.js');
 
   if (isAppShell) {

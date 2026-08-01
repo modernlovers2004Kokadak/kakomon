@@ -12,7 +12,9 @@
       warnings:[],
       duplicateGroups:[],
       pendingImages:[],
-      missingImages:[]
+      missingImages:[],
+      missingVisuals:[],
+      ambiguousAnswers:[]
     };
   }
 
@@ -111,6 +113,15 @@
           });
         }
 
+        const visualRequired=/(下図|次の図|図は|図の|図中|次の写真|写真は|写真の|写真中|イラスト|模式図)/.test(String(q.stem||''));
+        if(visualRequired&&!q.image){
+          report.missingVisuals.push(context);
+          add(report.warnings,'VISUAL_MISSING','図・写真を参照する問題ですが、画像が設定されていません。',context);
+        }
+        if(/複数・要確認/.test(String(q.answerAuditStatus||''))){
+          report.ambiguousAnswers.push(context);
+          add(report.warnings,'ANSWER_SOURCE_AMBIGUOUS','原本PDFの正答表示が複数あり、正答の追加確認が必要です。',context);
+        }
         if(q.image){
           const path=String(q.image);
           images.add(path);
