@@ -1,4 +1,4 @@
-const CACHE_NAME = 'riyoshi-past-exam-pwa-1.0.97';
+const CACHE_NAME = 'riyoshi-past-exam-pwa-1.0.111';
 const PRECACHE_URLS = [
   "./",
   "./index.html",
@@ -6,6 +6,15 @@ const PRECACHE_URLS = [
   "./apple-touch-icon.png",
   "./examData.js",
   "./examAudit.js",
+  "./examAudit103.js",
+  "./examAudit104.js",
+  "./examAudit105.js",
+  "./examAudit106.js",
+  "./examAudit107.js",
+  "./examAudit108.js",
+  "./examAudit109.js",
+  "./examAudit110.js",
+  "./examAudit111.js",
   "./examValidator.js",
   "./icons/icon-192.png",
   "./icons/icon-512.png",

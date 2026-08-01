@@ -152,8 +152,8 @@ function openOverview(key,mode){
 function explanationSummary(e){
  const out={reviewed:0,pending:0};
  e.questions.forEach(q=>{
-  const status=String(q.explanationReviewStatus||q.auditStatus?.['解説']||'監修待ち');
-  if(/監修済み|確認済み/.test(status)&&!/待ち/.test(status))out.reviewed++;else out.pending++;
+  const status=String(q.canonicalReviewStatus||'最終監修待ち');
+  if(status==='最終監修完了')out.reviewed++;else out.pending++;
  });
  return out;
 }
